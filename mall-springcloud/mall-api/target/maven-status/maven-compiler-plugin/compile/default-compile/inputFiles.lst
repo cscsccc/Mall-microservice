@@ -1,0 +1,7 @@
+/Users/chengsen/Desktop/code/Java/mall-springcloud/mall-api/src/main/java/com/cs/client/GoodsClient.java
+/Users/chengsen/Desktop/code/Java/mall-springcloud/mall-api/src/main/java/com/cs/dto/MallGoods.java
+/Users/chengsen/Desktop/code/Java/mall-springcloud/mall-api/src/main/java/com/cs/dto/StockNumDTO.java
+/Users/chengsen/Desktop/code/Java/mall-springcloud/mall-api/src/main/java/com/cs/client/CartClient.java
+/Users/chengsen/Desktop/code/Java/mall-springcloud/mall-api/src/main/java/com/cs/dto/MallCartItemVO.java
+/Users/chengsen/Desktop/code/Java/mall-springcloud/mall-api/src/main/java/com/cs/client/UserClient.java
+/Users/chengsen/Desktop/code/Java/mall-springcloud/mall-api/src/main/java/com/cs/config/DefaultFeignConfig.java

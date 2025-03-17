@@ -1,0 +1,7 @@
+com/cs/config/DefaultFeignConfig.class
+com/cs/client/GoodsClient.class
+com/cs/dto/StockNumDTO.class
+com/cs/dto/MallCartItemVO.class
+com/cs/dto/MallGoods.class
+com/cs/client/UserClient.class
+com/cs/client/CartClient.class

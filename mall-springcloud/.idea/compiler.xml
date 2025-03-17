@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="shop-cart-service" />
+        <module name="common" />
+        <module name="index-service" />
+        <module name="good-service" />
+        <module name="upload-service" />
+        <module name="user-service" />
+        <module name="order-service" />
+        <module name="mall-api" />
+        <module name="gateway" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="seata-service" target="17" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="common" options="" />
+      <module name="gateway" options="" />
+      <module name="good-service" options="" />
+      <module name="index-service" options="" />
+      <module name="mall-api" options="" />
+      <module name="order-service" options="" />
+      <module name="seata-service" options="" />
+      <module name="shop-cart-service" options="" />
+      <module name="upload-service" options="" />
+      <module name="user-service" options="" />
+    </option>
+  </component>
+</project>

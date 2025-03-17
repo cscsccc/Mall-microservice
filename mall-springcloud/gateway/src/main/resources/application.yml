@@ -1,0 +1,64 @@
+spring:
+  application.name:
+    gateway
+  cloud:
+    nacos:
+      server-addr: 127.0.0.1:8848
+    gateway:
+      routes:
+        - id: index-service
+          uri: lb://index-service
+          predicates:
+            - Path=/indexConfigs/**, /api/index-infos, /carousels
+        - id: user-service
+          uri: lb://user-service
+          predicates:
+            - Path=/adminUser/**, /users/**, /logout, /api/address/**, /api/user/**
+        - id: good-service
+          uri: lb://good-service
+          predicates:
+            - Path=/categories/**, /goods/**, /api/categories, /api/search, /api/goods/**
+        - id: order-service
+          uri: lb://order-service
+          predicates:
+            - Path=/orders/**, /seckill/**, /api/order/**, /api/saveOrder, /api/paySuccess, /api/seckill/**, /api/seckillExecution/**
+        - id: shop-cart-service
+          uri: lb://shop-cart-service
+          predicates:
+            - Path=/api/shop-cart/**
+        - id: upload-service
+          uri: lb://upload-service
+          predicates:
+            - Path=/upload/file
+
+
+      globalcors: # 全局的跨域处理
+        add-to-simple-url-handler-mapping: true # 解决options请求被拦截问题
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: # 允许哪些网站的跨域请求
+              - "http://localhost:5173"
+              - "http://localhost:8080"
+            allowedMethods: # 允许的跨域的请求方式
+              - "GET"
+              - "POST"
+              - "DELETE"
+              - "PUT"
+              - "OPTIONS"
+            allowedHeaders: "*" # 允许在请求中携带的头信息
+            allowCredentials: true # 是否允许携带cookie
+            maxAge: 360000 # 这次跨域检测的有效期
+logging:
+  level:
+    com.cs: debug
+  pattern:
+    dateformat: HH:mm:ss:SSS
+  file:
+    path: logs/${spring.application.name}
+
+server:
+  port: 9003
+debug: true
+
+
+

@@ -1,0 +1,32 @@
+spring:
+  application.name:
+    common
+#  data:
+#    redis:
+#      host: 127.0.0.1
+#      port: 6379
+#      database: 0
+#      connect-timeout: 5000ms
+#      timeout: 5000ms
+#      client-type: lettuce
+
+  # ?????
+logging:
+  level:
+    com.cs: debug
+  pattern:
+    dateformat: HH:mm:ss:SSS
+  file:
+    path: logs/${spring.application.name}
+# mybatis config
+mybatis:
+  mapper-locations:
+    classpath:mapper/*Mapper.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+server:
+  port: 9005
+debug: true
+
+
+

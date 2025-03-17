@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  @author 程序员十三
+      @qq交流群 791509631
+      @email 2449207463@qq.com
+      @link https://github.com/newbee-ltd -->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.cs</groupId>
+	<artifactId>cs-mall-cloud</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<name>cs-mall-cloud</name>
+	<packaging>pom</packaging>
+	<description>商城微服务版本(Spring Cloud Alibaba)</description>
+
+	<modules>
+		<module>order-service</module>
+		<module>shop-cart-service</module>
+		<module>index-service</module>
+		<module>good-service</module>
+		<module>user-service</module>
+		<module>gateway</module>
+		<module>common</module>
+		<module>mall-api</module>
+		<module>upload-service</module>
+	</modules>
+
+	<properties>
+		<spring.boot.version>3.0.2</spring.boot.version>
+		<spring.cloud.dependencies.version>2022.0.0</spring.cloud.dependencies.version>
+		<spring.cloud.alibaba.version>2022.0.0.0</spring.cloud.alibaba.version>
+		<mybatis.starter.version>3.0.2</mybatis.starter.version>
+		<springdoc.version>2.2.0</springdoc.version>
+		<springdoc-openapi-webflux-core.version>1.7.0</springdoc-openapi-webflux-core.version>
+		<java.version>17</java.version>
+		<logstash-logback-encoder.version>7.4</logstash-logback-encoder.version>
+		<zipkin.version>2.2.8.RELEASE</zipkin.version>
+		<elasticsearch.version>8.1.0</elasticsearch.version>
+		<feign-micrometer.version>12.5</feign-micrometer.version>
+		<maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring.cloud.dependencies.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>${spring.boot.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>com.alibaba.cloud</groupId>
+				<artifactId>spring-cloud-alibaba-dependencies</artifactId>
+				<version>${spring.cloud.alibaba.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-web</artifactId>
+				<version>${spring.boot.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-test</artifactId>
+				<version>${spring.boot.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.mybatis.spring.boot</groupId>
+				<artifactId>mybatis-spring-boot-starter</artifactId>
+				<version>${mybatis.starter.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springdoc</groupId>
+				<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+				<version>${springdoc.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springdoc</groupId>
+				<artifactId>springdoc-openapi-starter-webflux-ui</artifactId>
+				<version>${springdoc.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springdoc</groupId>
+				<artifactId>springdoc-openapi-webflux-core</artifactId>
+				<version>${springdoc-openapi-webflux-core.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-starter-zipkin</artifactId>
+				<version>${zipkin.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>net.logstash.logback</groupId>
+				<artifactId>logstash-logback-encoder</artifactId>
+				<version>${logstash-logback-encoder.version}</version>
+			</dependency>
+
+
+
+		</dependencies>
+	</dependencyManagement>
+	<dependencies>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.32</version>
+			<!--            <scope>provided</scope>-->
+		</dependency>
+
+		<!--nacos 服务注册发现-->
+		<dependency>
+			<groupId>com.alibaba.cloud</groupId>
+			<artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+		</dependency>
+
+<!--		<dependency>-->
+<!--			<groupId>io.netty</groupId>-->
+<!--			<artifactId>netty-resolver-dns-native-macos</artifactId>-->
+<!--			<version>4.1.76.Final</version>-->
+<!--			<classifier>osx-aarch_64</classifier>-->
+<!--			<scope>runtime</scope>-->
+<!--		</dependency>-->
+
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven-compiler-plugin.version}</version>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>${spring.boot.version}</version>
+			</plugin>
+		</plugins>
+	</build>
+
+	<repositories>
+		<repository>
+			<id>central</id>
+			<url>https://maven.aliyun.com/repository/central</url>
+			<name>aliyun</name>
+		</repository>
+	</repositories>
+
+	<!--  @author 程序员十三
+      @qq交流群 791509631
+      @email 2449207463@qq.com
+      @link https://github.com/newbee-ltd -->
+</project>

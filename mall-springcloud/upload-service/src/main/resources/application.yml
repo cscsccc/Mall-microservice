@@ -1,0 +1,34 @@
+spring:
+  application.name:
+    upload-service
+#  data:
+#    redis:
+#      host: 127.0.0.1
+#      port: 6379
+#      database: 0
+#      connect-timeout: 5000ms
+#      timeout: 5000ms
+#      client-type: lettuce
+  cloud:
+    nacos:
+      server-addr: 127.0.0.1:8848
+    sentinel:
+      transport:
+        dashboard: 127.0.0.1:9999
+        client-ip: 127.0.0.1
+      eager: true
+      http-method-specify: true
+logging:
+  level:
+    com.cs: debug
+  pattern:
+    dateformat: HH:mm:ss:SSS
+  file:
+    path: logs/${spring.application.name}
+# mybatis config
+server:
+  port: 9008
+debug: true
+
+
+

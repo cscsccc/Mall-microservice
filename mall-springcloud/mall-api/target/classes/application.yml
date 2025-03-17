@@ -1,0 +1,28 @@
+spring:
+  application.name:
+    mall-api
+#  data:
+#    redis:
+#      host: 127.0.0.1
+#      port: 6379
+#      database: 0
+#      connect-timeout: 5000ms
+#      timeout: 5000ms
+#      client-type: lettuce
+  cloud:
+    nacos:
+      server-addr: 127.0.0.1:8848
+
+logging:
+  level:
+    com.cs: debug
+  pattern:
+    dateformat: HH:mm:ss:SSS
+  file:
+    path: logs/${spring.application.name}
+server:
+  port: 9009
+debug: true
+
+
+

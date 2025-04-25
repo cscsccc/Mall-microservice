@@ -23,7 +23,7 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/mall_user?useSSL=false&serverTimezone=UTC
     username: root
-    password: Cs12356..
+    password: ******
     driver-class-name: com.mysql.cj.jdbc.Driver
 logging:
   level:
